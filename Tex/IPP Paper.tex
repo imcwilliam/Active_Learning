@@ -2,7 +2,7 @@
 \usepackage{amsmath,amsfonts,amsthm,bm,listings,graphicx,float,subcaption,multicol,wrapfig,stfloats}
 \usepackage[export]{adjustbox}
 \usepackage[labelfont=bf]{caption}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1.1in]{geometry}
 \graphicspath{ {/Users/ianmcwilliam/Desktop/MSc/Active_Learning/} }
 \usepackage{titling}
 \setlength{\droptitle}{0cm}
@@ -14,27 +14,40 @@
 \maketitle
 
 \begin{abstract}
-In this paper we propose a project researching how active learning methods can be used to automatically construct training curricula, and test the hypothesis that training deep models with such `active curricula' can improve upon other training paradigms such as traditional curriculum learning, random sampling or pre-training. The work will investigate a variety of methodologies for constructing a training curriculum using active learning metrics, focusing on how the different training methods affect the performance of convolutional networks on a set of image classification tasks, with performance measured in terms of generalization error and convergence speed. The output of the project will hopefully be a set of novel ways to improve the training of deep models, as well as a more thorough exploration of the relationship between active and curriculum learning than currently exists in the literature.
+In this paper we propose a project researching how active learning methods can be used to automatically construct training curricula, with the aim being to test the hypothesis that training deep models with such `active curricula' can improve upon other training paradigms such as  random sampling, pre-training or traditional curriculum learning. The work will investigate a variety of methodologies for constructing a curriculum using active learning metrics, focusing on how the different training methods affect the performance of convolutional networks on a range of image classification tasks, with performance measured in terms of generalization error and convergence speed. The output of the project will hopefully be a set of novel ways to improve the training of deep models, as well as a more thorough exploration of the relationship between active and curriculum learning than currently exists in the literature.
 \end{abstract}
 
 \section{Introduction}
 
-INTRODUCE ACTIVE AND CURRICULUM LEARNING, EXPLAIN CONNECTION AND 
+\subsection{Active Learning}
+\textit{Active learning} refers to a learning paradigm wherein machine learning algorithms actively select, or `query', the samples from which it learns; in the case of deep learning this contrasts with the default approach of randomly sampling `batches' of labeled training samples. The motivation for active learning is that, by allowing it to intelligently select the samples from which it learns, the algorithm can achieve superior generalization performance from a smaller number of training samples than if the samples had been chosen randomly. In domains where unlabeled data is abundant but obtaining labels is expensive, active learning can be used to reduce the cost associated with training a deep model, as the active approach allows the designer to obtain labels only for the samples which will be most beneficial to learning.
 
-\textit{Active learning} refers to the learning paradigm wherein machine learning algorithms actively select or `query' the samples from which it learns; in the case of deep learning this contrasts with the default approach of randomly sampling `batches' of labeled training samples. The motivation for active learning is that, by allowing it to select the samples from which it learns, the algorithm can achieve superior generalization performance from a smaller number of training samples than if the samples had been chosen randomly. In domains where unlabeled data is abundant but obtaining labels is expensive, active learning can be used to reduce the cost associated with training a deep model, as the active approach allows the designer to obtain labels only for the samples which will be most beneficial to learning.
+There are a variety of methods by which the algorithm can query datapoints, however they generally focus on finding the points in the input space that the algorithm is most `uncertain' about, allowing the algorithm to fill what could be seen as gaps in its knowledge of the domain. OUTLINE SOME MAIN ACTIVE LEARNING METHODS, THEN DISCUSS DEEP MODEL SPECIFIC METHODS SUCH AS IN YARIN GAL ETC.
 
-There are a variety of methods by which the algorithm can query datapoints, however they generally focus on finding the points in the input space that the algorithm is most `uncertain' about, allowing the algorithm to fill what could be seen as gaps in its knowledge of the domain. A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'). Motivated by the way in which humans and animals learn, the learning curriculum generally begins with `easy' examples, with the difficulty of the examples increasing as training progresses; Bengio et al show that learning with a curriculum can improve overall performance on a variety of tasks etc. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
+\subsection{Curriculum Learning}
+A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'), again in contrast to simply sampling randomly from a set of training data. Motivated by the way in which humans and animals learn, a curriculum generally begins with `easy' examples, before transitioning to more challening ones, with the aim being to improve generalization performance andconvergence speed. TALK ABOUT BENGIO PAPER ETC. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
 
+DISCUSS LINKS TO TRANSFER LEARNING, CURRICULUM LEARNING AS A CONTINUATION METHOD (WITH REFS)
 
 \section{Purpose}
-DESCRIPTION OF PROPOSAL IDEA, I.E. CONSTRUCTING CURRICULA WITH ACTIVE LEARNING
+\subsection{Curriculum Construction}
+One of the main difficulties with implementing curriculum learning is that the curriculum must be constructed prior to training, requiring some predefined measure of difficulty with which to order training. In certain domains this there may be a natural ordering of difficulty, for example in the geometric shapes example in REF BENGIO, however in many tasks manually constructing a curriculum is not as straight forward. This motivates the development of methods to automatically construct learning curricula without requiring expert domain knowledge; in this paper we suggest that using active learning metrics may be used to automatically construct such curricula, potentially providing an efficient way to improve the training of deep learning algorithms. 
+
+\subsection{Active Curricula}
+Most active learning methodologies produce a metric, corresponding to an estimation of algorithm `uncertainty', for unlabled input samples. In the traditional active learning setting, the algorithm then queries the label of the sample(s) about which it has the most uncertainty and is then trained using the selected sample(s). An alternative approach is to use the uncertainty measure as a way of approximating the `difficulty' of a given input sample, which can then be used to construct a learning curriculum, which we term an `active curriculum'.
+
+\subsection{Curriculum Construction}
 
 \section{Background}
-DISCUSS PREVIOUS PAPERS WHICH CONNECT AUTOMATICALLY CONSTRUCT CURRICULUM LEARNING AND APPLY ACTIVE LEARNING TO DEEP IMAGE CLASSIFICATION
+\subsection{Automatic Curriculum Construction}
+
+\subsection{Curriculum Learning for Deep Models}
 
 \section{Methods}
-DIFFERENT ACTIVE LEARNING METRICS
-DIFFERENT WAYS TO CONSTRUCT CURRICULA WITH ACTIVE LEARNING METRICS
+\subsection{Active Learning Metrics}
+
+\subsection{Curriculum Construction Methods}
+
 
 Constructing curricula with a set of Active Learning methods. 
 Various curriculum constructions, select easy, select hard, easy to hard, hard to easy

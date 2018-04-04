@@ -25,7 +25,7 @@ In this paper we propose a project researching how active learning methods can b
 There are a variety of methods by which the algorithm can query datapoints, however they generally focus on finding the points in the input space that the algorithm is most `uncertain' about, allowing the algorithm to fill what could be seen as gaps in its knowledge of the domain. OUTLINE SOME MAIN ACTIVE LEARNING METHODS, THEN DISCUSS DEEP MODEL SPECIFIC METHODS SUCH AS IN YARIN GAL ETC.
 
 \subsection{Curriculum Learning}
-A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'), again in contrast to simply sampling randomly from a set of training data. Motivated by the way in which humans and animals learn, a curriculum generally begins with `easy' examples, before transitioning to more challening ones, with the aim being to improve generalization performance andconvergence speed. TALK ABOUT BENGIO PAPER ETC. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
+A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'), again in contrast to simply sampling randomly from a set of training data. Motivated by the way in which humans and animals learn, a curriculum generally begins with `easy' examples, before transitioning to more challenging ones, with the aim being to improve generalization performance and convergence speed. TALK ABOUT BENGIO PAPER ETC. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
 
 DISCUSS LINKS TO TRANSFER LEARNING, CURRICULUM LEARNING AS A CONTINUATION METHOD (WITH REFS)
 
@@ -34,9 +34,12 @@ DISCUSS LINKS TO TRANSFER LEARNING, CURRICULUM LEARNING AS A CONTINUATION METHOD
 One of the main difficulties with implementing curriculum learning is that the curriculum must be constructed prior to training, requiring some predefined measure of difficulty with which to order training. In certain domains this there may be a natural ordering of difficulty, for example in the geometric shapes example in REF BENGIO, however in many tasks manually constructing a curriculum is not as straight forward. This motivates the development of methods to automatically construct learning curricula without requiring expert domain knowledge; in this paper we suggest that using active learning metrics may be used to automatically construct such curricula, potentially providing an efficient way to improve the training of deep learning algorithms. 
 
 \subsection{Active Curricula}
-Most active learning methodologies produce a metric, corresponding to an estimation of algorithm `uncertainty', for unlabled input samples. In the traditional active learning setting, the algorithm then queries the label of the sample(s) about which it has the most uncertainty and is then trained using the selected sample(s). An alternative approach is to use the uncertainty measure as a way of approximating the `difficulty' of a given input sample, which can then be used to construct a learning curriculum, which we term an `active curriculum'.
+Most active learning methodologies produce a metric, corresponding to an estimation of algorithm `uncertainty', for unlabeled input samples. In the traditional active learning setting, the algorithm then queries the label of the sample(s) about which it has the most uncertainty and is then trained using the selected sample(s). An alternative approach is to use the uncertainty measure as a way of approximating the `difficulty' of a given input sample, which can then be used to construct a learning curriculum, which we term an `active curriculum'.
 
 \subsection{Curriculum Construction}
+As discussed in the introduction, active and curriculum learning offer a somewhat dichotomous view on how best to order training samples. In active learning the samples about which the algorithm is most uncertain are chosen to train on, while in curriculum learning training focuses on training on easier samples, before progressing to more difficult ones. This trade off is one that has not been explored in the literature, and it is a dimension on which we will focus in the proposed work. 
+
+Given an uncertainty/difficulty metric using active learning methods, we have the option of constructing a curriculum beginning with training on the least uncertain samples, or alternatively training on the sa 
 
 \section{Background}
 \subsection{Automatic Curriculum Construction}
@@ -64,8 +67,25 @@ New training paradigms, hopefully generic ways to consistently improve on random
 
 
 \begin{thebibliography}{1}
-\bibitem{O'Keefe 71}
-J.O'Keefe, J.Dostrovsky, ``The hippocampus as a spatial map. Preliminary evidence from unit activity in the freely-moving rat'', \textit{Brain Research}, Issue 34, pp 171-175, 1971
+\bibitem{Bengio 09}
+Y.Bengio, J.Louradour, R.Collobert and J.Weston, ``Curriculum Learning'', \textit{Proc. Int'l Conf. Machine Learning}, 2009
+\bibitem{Cohn 1994}
+D.Cohn, L.Atlas and T.Ladner, ``Improving Generalization with Active Learning'', \textit{Machine Learning}, Issue 15, p201-221, 1994
+\bibitem{Gal 2017}
+Y.Gal, R.Islam, Z.Ghahramani, ``Deep Bayesian Active Learning with Image Data'', \textit{NIPS, Bayesian Deep Learning workshop}, 2016
+\bibitem{Graves 2017}
+A. Graves, M. G. Bellemare, J. Menick, R. Munos, and K. Kavukcuoglu. ``Automated curriculum learning for neural networks'', \textit{Proc. Machine Learning Research}, 70, p1311-1320, 2017
+\bibitem{Katharopoulos 2018}
+A.Katharopoulos and F.Fleuret, ``Not All Samples are Created Equal: Deep Learning with Importance Sampling'', arXiv preprint, arXiv:1803.00942, 2018
+\bibitem{Justesen 2018}
+N.Justesen, S.Risi, ``Automated Curriculum Learning by Rewarding Temporally Rare Events'', arXiv preprint, arXiv:1803.0713, 2018
+\bibitem{Koller 2010}
+M.Pawan Kumar, B.Packer, D.Koller, ``Self-Paced Learning for Latent Variable Models'', \textit{Advances in Neural Information Processing Systems 25}, 2010
+\bibitem{Settles 2009}
+B.Settles, ``Active Learning Literature Survey'', Computer Sciences Technical Report 1648, 2009
+\bibitem{Weinshall 2018}
+D.Weinshall, G.Cohen, ``Curriculum Learning by Transfer Learning: Theory and Experiments with Deep Networks'', arXiv preprint, arXiv:1802.03796, 2018
+
 \end{thebibliography}
 
 

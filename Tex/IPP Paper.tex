@@ -13,28 +13,32 @@
 \date{}
 \maketitle
 
+\tableofcontents
+
 \begin{abstract}
-In this paper we propose a project researching how active learning methods can be used to automatically construct training curricula, with the aim being to test the hypothesis that training deep models with such `active curricula' can improve upon other training paradigms such as  random sampling, pre-training or traditional curriculum learning. The work will investigate a variety of methodologies for constructing a curriculum using active learning metrics, focusing on how the different training methods affect the performance of convolutional networks on a range of image classification tasks, with performance measured in terms of generalization error and convergence speed. The output of the project will hopefully be a set of novel ways to improve the training of deep models, as well as a more thorough exploration of the relationship between active and curriculum learning than currently exists in the literature.
+In this paper we propose a project researching how active learning methods can be used to automatically construct training curricula, with the aim being to test the hypothesis that training deep models with such `active curricula' can improve upon other training paradigms such as  random sampling, pre-training or traditional curriculum learning. The work will investigate a variety of methodologies for constructing a curriculum using active learning metrics, focusing on how the different training methods affect the performance of convolutional networks on a range of image classification tasks. The output of the project will hopefully be a set of novel ways to improve the training of deep models, as well as a more thorough exploration of the relationship between active and curriculum learning than currently exists in the literature.
 \end{abstract}
 
 \section{Introduction}
 
 \subsection{Active Learning}
-\textit{Active learning} refers to a learning paradigm wherein machine learning algorithms actively select, or `query', the samples from which it learns; in the case of deep learning this contrasts with the default approach of randomly sampling `batches' of labeled training samples. The motivation for active learning is that, by allowing it to intelligently select the samples from which it learns, the algorithm can achieve superior generalization performance from a smaller number of training samples than if the samples had been chosen randomly. In domains where unlabeled data is abundant but obtaining labels is expensive, active learning can be used to reduce the cost associated with training a deep model, as the active approach allows the designer to obtain labels only for the samples which will be most beneficial to learning.
+\textit{Active learning} refers to a learning paradigm wherein machine learning algorithms actively select, or `query', the samples from which it learns; in the case of deep learning this contrasts with the usual approach of randomly sampling labeled training samples. The motivation for active learning is that, by allowing it to intelligently select the samples from which it learns, the algorithm can achieve superior generalization performance from a smaller number of training samples than if the samples had been chosen randomly. In domains where unlabeled data is abundant but obtaining labels is expensive, active learning can be used to reduce the cost associated with training a deep model, as the active approach allows the designer to obtain labels only for the samples which will be most beneficial to learning.
 
 There are a variety of methods by which the algorithm can query datapoints, however they generally focus on finding the points in the input space that the algorithm is most `uncertain' about, allowing the algorithm to fill what could be seen as gaps in its knowledge of the domain. OUTLINE SOME MAIN ACTIVE LEARNING METHODS, THEN DISCUSS DEEP MODEL SPECIFIC METHODS SUCH AS IN YARIN GAL ETC.
 
 \subsection{Curriculum Learning}
-A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'), again in contrast to simply sampling randomly from a set of training data. Motivated by the way in which humans and animals learn, a curriculum generally begins with `easy' examples, before transitioning to more challenging ones, with the aim being to improve generalization performance and convergence speed. TALK ABOUT BENGIO PAPER ETC. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
+A related field is that of \textit{curriculum learning}, which explores how the learning process can be improved by presenting training samples to the algorithm in a meaningful order (with the order defining a `curriculum'), again in contrast to simply sampling randomly from a training set. Motivated by the way in which humans and animals learn, a curriculum generally begins with `easy' examples, before transitioning to more challenging ones, with the aim being to improve generalization performance and convergence speed. TALK ABOUT BENGIO PAPER ETC. It is interesting to note that, while similar, active and curriculum learning are somewhat opposed in their learning philosophies, with the former focusing on learning from uncertain/difficult samples and the latter focusing beginning with easy samples before continuing to more difficult ones.
 
-DISCUSS LINKS TO TRANSFER LEARNING, CURRICULUM LEARNING AS A CONTINUATION METHOD (WITH REFS)
+Bengio et al \cite{Bengio 09} find a theoretical motivation for curriculum learning by suggestings that it can be seen as a \textit{continuation method} (a method of optimisation non-convex functions). Curriculum learning has also drawn similarities with \textit{transfer learning}, as the early, `easier' stages of training can be seen as a separate task, with the network weights then being used as the initial weights for training on the more difficult samples. Similiarly curriculum learning can be seen as a form of pre-training, comparing the method to unsupervised pre-training methods as in \cite{Erhan 09}, where pre-training allows the supervised learning to begin in a region of parameter space that led to superior generalization performance. 
+
+% Continuation methods are an approach for optimising non-convex functions, the general approach being to begin by solving a smooth, convex problem, then introducing less smooth versions of the problem. The similarity to curriculum learning can be seen if one considers the easier training examples used in the beginning of training to represent a smoother optimisation problem, which is then made more complex with more difficult examples. 
 
 \section{Purpose}
 \subsection{Curriculum Construction}
-One of the main difficulties with implementing curriculum learning is that the curriculum must be constructed prior to training, requiring some predefined measure of difficulty with which to order training. In certain domains this there may be a natural ordering of difficulty, for example in the geometric shapes example in REF BENGIO, however in many tasks manually constructing a curriculum is not as straight forward. This motivates the development of methods to automatically construct learning curricula without requiring expert domain knowledge; in this paper we suggest that using active learning metrics may be used to automatically construct such curricula, potentially providing an efficient way to improve the training of deep learning algorithms. 
+One of the main difficulties with implementing curriculum learning is that the curriculum must be constructed prior to training, requiring some predefined measure of difficulty with which to order the training samples. In certain domains  there may be a natural ordering of difficulty, for example in the geometric shapes example in \cite{Bengio 09}, however in many tasks manually constructing a curriculum is not as straight forward. This motivates the development of methods to automatically construct learning curricula without requiring expert domain knowledge; in this paper we suggest that using active learning metrics may be used to automatically construct such curricula, potentially providing an efficient way to improve the training of deep learning algorithms.
 
 \subsection{Active Curricula}
-Most active learning methodologies produce a metric, corresponding to an estimation of algorithm `uncertainty', for unlabeled input samples. In the traditional active learning setting, the algorithm then queries the label of the sample(s) about which it has the most uncertainty and is then trained using the selected sample(s). An alternative approach is to use the uncertainty measure as a way of approximating the `difficulty' of a given input sample, which can then be used to construct a learning curriculum, which we term an `active curriculum'.
+Active learning methodologies generally involve calculating a measure of the algorithm's `uncertainty' in predicting the label of a given input sample. In the traditional active learning setting, the algorithm then queries the label of the sample(s) about which it has the most uncertainty and is then trained using the selected sample(s). An alternative approach is to view the uncertainty measure as a way of approximating the `difficulty' of a given input sample, which can then be used to construct a learning curriculum, which we term an `active curriculum'.
 
 \subsection{Curriculum Construction}
 As discussed in the introduction, active and curriculum learning offer a somewhat dichotomous view on how best to order training samples. In active learning the samples about which the algorithm is most uncertain are chosen to train on, while in curriculum learning training focuses on training on easier samples, before progressing to more difficult ones. This trade off is one that has not been explored in the literature, and it is a dimension on which we will focus in the proposed work. 
@@ -67,10 +71,14 @@ New training paradigms, hopefully generic ways to consistently improve on random
 
 
 \begin{thebibliography}{1}
+\bibitem{Allgower 1980}
+E.L.Allgower and K.Georg, ``Numerical continuation methods. An introduction'', \textit{Springer-Verlag}, 1980
 \bibitem{Bengio 09}
 Y.Bengio, J.Louradour, R.Collobert and J.Weston, ``Curriculum Learning'', \textit{Proc. Int'l Conf. Machine Learning}, 2009
 \bibitem{Cohn 1994}
 D.Cohn, L.Atlas and T.Ladner, ``Improving Generalization with Active Learning'', \textit{Machine Learning}, Issue 15, p201-221, 1994
+\bibitem{Erhan 09}
+D.Erhan, P.A.Manzagol, Y.Bengio, S.Bengio and P.Vincent, ``The difficulty of training deep architectures and the effect of unsupervised pre-training'', \textit{AI \& Statistics}, 2009
 \bibitem{Gal 2017}
 Y.Gal, R.Islam, Z.Ghahramani, ``Deep Bayesian Active Learning with Image Data'', \textit{NIPS, Bayesian Deep Learning workshop}, 2016
 \bibitem{Graves 2017}
@@ -85,6 +93,7 @@ M.Pawan Kumar, B.Packer, D.Koller, ``Self-Paced Learning for Latent Variable Mod
 B.Settles, ``Active Learning Literature Survey'', Computer Sciences Technical Report 1648, 2009
 \bibitem{Weinshall 2018}
 D.Weinshall, G.Cohen, ``Curriculum Learning by Transfer Learning: Theory and Experiments with Deep Networks'', arXiv preprint, arXiv:1802.03796, 2018
+
 
 \end{thebibliography}
 

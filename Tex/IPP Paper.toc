@@ -1,16 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {subsection}{\numberline {1.1}Active Learning}{2}
-\contentsline {subsection}{\numberline {1.2}Curriculum Learning}{2}
-\contentsline {section}{\numberline {2}Purpose}{2}
-\contentsline {subsection}{\numberline {2.1}Curriculum Construction}{2}
-\contentsline {subsection}{\numberline {2.2}Active Curricula}{3}
-\contentsline {subsection}{\numberline {2.3}Curriculum Construction}{3}
+\contentsline {section}{\numberline {2}Purpose}{3}
 \contentsline {section}{\numberline {3}Background}{3}
-\contentsline {subsection}{\numberline {3.1}Automatic Curriculum Construction}{3}
-\contentsline {subsection}{\numberline {3.2}Curriculum Learning for Deep Models}{3}
 \contentsline {section}{\numberline {4}Methods}{3}
-\contentsline {subsection}{\numberline {4.1}Active Learning Metrics}{3}
-\contentsline {subsection}{\numberline {4.2}Curriculum Construction Methods}{3}
-\contentsline {section}{\numberline {5}Evaluation}{3}
-\contentsline {section}{\numberline {6}Outputs}{3}
+\contentsline {section}{\numberline {5}Evaluation}{4}
+\contentsline {section}{\numberline {6}Outputs}{4}
 \contentsline {section}{\numberline {7}Workplan}{4}

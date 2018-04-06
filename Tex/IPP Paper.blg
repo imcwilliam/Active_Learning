@@ -1,5 +1,37 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: IPP Paper.aux
-I found no \citation commands---while reading file IPP Paper.aux
+White space in argument---line 3 of file IPP Paper.aux
+ : \citation{Gal
+ :               2017}
+I'm skipping whatever remains of this command
+White space in argument---line 4 of file IPP Paper.aux
+ : \citation{Bengio
+ :                  09}
+I'm skipping whatever remains of this command
+White space in argument---line 5 of file IPP Paper.aux
+ : \citation{Erhan
+ :                 09}
+I'm skipping whatever remains of this command
+White space in argument---line 6 of file IPP Paper.aux
+ : \citation{Bengio
+ :                  09}
+I'm skipping whatever remains of this command
+White space in argument---line 8 of file IPP Paper.aux
+ : \citation{Koller
+ :                  2010}
+I'm skipping whatever remains of this command
+White space in argument---line 9 of file IPP Paper.aux
+ : \citation{Bengio
+ :                  09}
+I'm skipping whatever remains of this command
+White space in argument---line 12 of file IPP Paper.aux
+ : \citation{Koller
+ :                  2010}
+I'm skipping whatever remains of this command
+White space in argument---line 13 of file IPP Paper.aux
+ : \citation{Bengio
+ :                  09}
+I'm skipping whatever remains of this command
+I found no cite keys---while reading file IPP Paper.aux
 I found no \bibdata command---while reading file IPP Paper.aux
 I found no \bibstyle command---while reading file IPP Paper.aux
-(There were 3 error messages)
+(There were 11 error messages)

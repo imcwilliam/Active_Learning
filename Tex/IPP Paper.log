@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  18 APR 2018 10:36
 entering extended mode
  restricted \write18 enabled.
@@ -10,6 +11,24 @@ Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2018.2.28)  10 APR 2018 20:39
+entering extended mode
+**IPP*Paper.tex
+("C:\Active_Learning\Tex\IPP Paper.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
+, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
+ kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
+-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
+ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
+elsh, loaded.
+("C:\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+>>>>>>> d82026de755b75c79546df96e9713dfba980fd57
 )
 \c@part=\count79
 \c@section=\count80
@@ -342,6 +361,7 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmargin=\skip52
 \droptitle=\skip53
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
@@ -472,6 +492,27 @@ LaTeX Font Info:    ... okay on input line 11.
 \c@lstlisting=\count140
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+=======
+
+LaTeX Warning: Unused global option(s):
+    [10.5pt].
+
+("C:\Active_Learning\Tex\IPP Paper.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+\c@lstlisting=\count130
+ ("C:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+>>>>>>> d82026de755b75c79546df96e9713dfba980fd57
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count141
 \scratchdimen=\dimen158
@@ -576,6 +617,7 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 30.
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+<<<<<<< HEAD
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
  [2] [3] [4]
 [5]
@@ -630,4 +672,42 @@ PDF statistics:
  199 compressed objects within 2 object streams
  51 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
+ [2] [3] [4] [5] [6] [7]
+[8] <ExampleResults.png, id=45, 1266.23062pt x 842.39719pt>
+File: ExampleResults.png Graphic file (type png)
+ <use ExampleResults.png>
+Package pdftex.def Info: ExampleResults.png used on input line 242.
+(pdftex.def)             Requested size: 443.18736pt x 294.84343pt.
+
+Overfull \hbox (4.67436pt too wide) in paragraph at lines 242--243
+ [][] 
+ []
+
+[9 <C:/Active_Learning/Tex/ExampleResults.png>] ("C:\Active_Learning\Tex\IPP Paper.aux") ) 
+Here is how much of TeX's memory you used:
+ 5824 strings out of 493921
+ 83944 string characters out of 3152872
+ 158354 words of memory out of 3000000
+ 9008 multiletter control sequences out of 15000+200000
+ 17367 words of font info for 64 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,11n,77p,1378b,368s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy5.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti10.pfb>
+Output written on "IPP Paper.pdf" (9 pages, 308945 bytes).
+PDF statistics:
+ 107 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> d82026de755b75c79546df96e9713dfba980fd57
 
